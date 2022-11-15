@@ -79,7 +79,7 @@ runcmd:
 - maas admin vm-hosts create  password=password  type=lxd power_address=https://${IP_ADDRESS}:8443 project=maas
 # Automatically create and add ssh keys to MAAS
 - ssh-keygen -q -t rsa -N "" -f "/home/deki/.ssh/id_rsa"
-- chown ubuntu:ubuntu /home/deki/.ssh/id_rsa /home/deki/.ssh/id_rsa.pub
+- chown deki:deki /home/deki/.ssh/id_rsa /home/deki/.ssh/id_rsa.pub
 - chmod 600 /home/deki/.ssh/id_rsa
 - chmod 644 /home/deki/.ssh/id_rsa.pub
 - maas admin sshkeys create key="$(cat /home/deki/.ssh/id_rsa.pub)"
